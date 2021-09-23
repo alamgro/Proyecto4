@@ -2,28 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AddRecource : MonoBehaviour
-{               //Item Resource
+public class AddResource : MonoBehaviour
+{               
+    //Item Resource
     /*Alexander Iniguez Septiembre, 2021
-     * Añanade un elemto a los recursos 
+     * Añanade un elemento a los recursos del enum, llama la funcion de actualizar el UI
      */
 
-    public Item typeItem; //Que tipo de recurso es 
+    public Item typeItem; //Que tipo de recurso quieres que sea
 
     Resources resources;
+
     void Start()
     {
-         resources = Resources.Instance; //Una referencias para las 
-
+         resources = Resources.Instance; //Una referencias 
     }
 
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player")) 
         {
             switch (typeItem)
             {
@@ -43,8 +40,7 @@ public class AddRecource : MonoBehaviour
                     resources.plastic++;
                     break;
             }
-
-            resources.UpdateHealthBar();
+            resources.UpdateUI(); //Llamada desde Resources
             Destroy(gameObject);
         }
     }
