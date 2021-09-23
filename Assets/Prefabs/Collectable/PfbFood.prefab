@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3090034627055337765}
   - component: {fileID: 2361844643629691228}
   m_Layer: 6
-  m_Name: PfbMaterial
+  m_Name: PfbFood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15df9df0f02d7c44884522f88c9629b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeItem: 0
+  typeItem: 1
