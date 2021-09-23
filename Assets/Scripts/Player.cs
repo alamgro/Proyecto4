@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+/*
+ * Posibilidad de que tenga invulnerabilidad por un tiempo **
+ */
+
+
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed; //Player speed
