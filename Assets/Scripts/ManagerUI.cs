@@ -22,6 +22,7 @@ public class ManagerUI : MonoBehaviour
     {
         resources = Resources.Instance;
         resources.managerUI = this;
+        resources.UpdateUI();
         //junk.text = resources.wood.ToString();
     }
 
