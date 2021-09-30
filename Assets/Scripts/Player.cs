@@ -16,10 +16,12 @@ public class Player : MonoBehaviour
     [SerializeField] private Image healthBarUI;
     private Vector3 dirMovement; //Movement direction of the player
     private Rigidbody rb;
+    private Camera cam;
     
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        cam = Camera.main;
         health = maxHealth; //Set initial health
         if(healthBarUI)
             healthBarUI.fillAmount = (float) health / maxHealth; //Set initial value of HealtBar in UI
@@ -28,7 +30,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Get direction vector of movement
-        dirMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized * speed;
+        dirMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized ;
+        //Get new direction compared with the camera world direction
+        dirMovement = cam.transform.TransformDirection(dirMovement) * speed;
 
         //Assign movement direction to the rigidbody velocity
         dirMovement.y = rb.velocity.y; 

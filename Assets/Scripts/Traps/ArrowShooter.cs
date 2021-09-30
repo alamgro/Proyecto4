@@ -2,27 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ArrowShooter : MonoBehaviour
 {
     [SerializeField] private GameObject pfbArrow; //Arrow prefab
     [SerializeField] private float spawnTime;
+    WaitForSecondsRealtime wait;
 
     void Start()
     {
-        StartCoroutine(Spawn(spawnTime));
+        wait = new WaitForSecondsRealtime(spawnTime); //Store WaitForSeconds to avoid generating garbage
+        StartCoroutine(Spawn());
     }
 
-    void Update()
+    private IEnumerator Spawn()
     {
-        
-    }
-
-    private IEnumerator Spawn(float _spawnTime)
-    {
-        yield return new WaitForSecondsRealtime(_spawnTime);
-        //NECESITO COMPROBAR LA DIRECCIÓN DE LA FLECHA ***
-        Instantiate(pfbArrow, transform.position, Quaternion.identity);
-        StartCoroutine(Spawn(_spawnTime));
-
+        //Infinite arrow spawner
+        while (true)
+        {
+            yield return wait;
+            GameObject go = Instantiate(pfbArrow, transform.position, transform.rotation); //Spawn object in the right direction
+            go.GetComponent<Arrow>().Direction = transform.forward; //Set shot direction (same as the arrow shooter)
+        }
     }
 }
