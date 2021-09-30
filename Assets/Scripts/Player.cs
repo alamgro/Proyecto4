@@ -21,7 +21,8 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         health = maxHealth; //Set initial health
-        healthBarUI.fillAmount = (float) health / maxHealth; //Set initial value of HealtBar in UI
+        if(healthBarUI)
+            healthBarUI.fillAmount = (float) health / maxHealth; //Set initial value of HealtBar in UI
     }
 
     void Update()
