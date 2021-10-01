@@ -9,7 +9,7 @@ public class AddResource : MonoBehaviour
      * Añanade un elemento a los recursos del enum, llama la funcion de actualizar el UI
      */
 
-    public Item typeItem; //Que tipo de recurso quieres que sea
+    public Item typeItem; //Que tipo de recurso quieres que sea, enum from Resources
 
     Resources resources;
 
