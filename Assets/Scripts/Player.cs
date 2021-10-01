@@ -8,7 +8,7 @@ using UnityEngine;
  */
 
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ICharacters
 {
     [SerializeField] private float speed; //Player speed
     [SerializeField] private int maxHealth; //Player Max HP
@@ -46,6 +46,12 @@ public class Player : MonoBehaviour
         #endregion
     }
 
+    public void TakeDamage(int _damage)
+    {
+        Health -= _damage;
+        print("Get damage");
+    }
+
     public float Speed
     {
         get; set;
@@ -65,7 +71,8 @@ public class Player : MonoBehaviour
                 health = maxHealth;
 
             //Update health bar
-            healthBarUI.fillAmount = (float)health / maxHealth;
+            if(healthBarUI)
+                healthBarUI.fillAmount = (float)health / maxHealth;
         }
     }
 
