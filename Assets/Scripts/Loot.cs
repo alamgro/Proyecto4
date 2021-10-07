@@ -34,6 +34,9 @@ public class Loot : MonoBehaviour
         if(isInside)
         {
             if(Input.GetKey(KeyCode.Space))
+            {
+
+            }
         }
     }
 
