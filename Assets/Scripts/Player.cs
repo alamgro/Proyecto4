@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, ICharacters
     [SerializeField] private float speed; //Player speed
     [SerializeField] private int maxHealth; //Player Max HP
     [SerializeField] private int health; //Player HP
-    [SerializeField] private Image healthBarUI;
+    private HealthBar _healthBar;
     private Vector3 dirMovement; //Movement direction of the player
     private Rigidbody rb;
     private Camera cam;
@@ -23,8 +23,6 @@ public class Player : MonoBehaviour, ICharacters
         rb = GetComponent<Rigidbody>();
         cam = Camera.main;
         health = maxHealth; //Set initial health
-        if(healthBarUI)
-            healthBarUI.fillAmount = (float) health / maxHealth; //Set initial value of HealtBar in UI
     }
 
     void Update()
@@ -49,7 +47,7 @@ public class Player : MonoBehaviour, ICharacters
     public void TakeDamage(int _damage)
     {
         Health -= _damage;
-        print("Get damage");
+        //print("Get damage");
     }
 
     public float Speed
@@ -71,9 +69,10 @@ public class Player : MonoBehaviour, ICharacters
                 health = maxHealth;
 
             //Update health bar
-            if(healthBarUI)
-                healthBarUI.fillAmount = (float)health / maxHealth;
+            //healthBar.UpdateBar();
         }
     }
+
+    public HealthBar healthBar { get; set; }
 
 }
