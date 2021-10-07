@@ -5,6 +5,7 @@ using UnityEngine;
 public class Island : MonoBehaviour
 {
     [SerializeField] private float speed;
+    private Transform targetPos;
 
     void Start()
     {
@@ -13,6 +14,8 @@ public class Island : MonoBehaviour
 
     void Update()
     {
-        
+        transform.position = Vector3.MoveTowards(transform.position, TargetPos.position, 1.0f);
     }
+
+    public Transform TargetPos { get; set; }
 }

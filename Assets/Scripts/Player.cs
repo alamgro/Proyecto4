@@ -73,6 +73,8 @@ public class Player : MonoBehaviour, ICharacters
         }
     }
 
+    public int MaxHealth { get; set; }
+
     public HealthBar healthBar { get; set; }
 
 }
