@@ -9,8 +9,15 @@ public class HealthBar : MonoBehaviour
      * Controla la barra de vida con referencias de Resources
      */
 
+    /*
+     *necesito saber cual es el player
+     *funcion del player de actualizar la barra
+     */
+
+
     public int maxHealth;
     public int currentHealth;
+    public Player player;
 
     public Image bar;
 
@@ -18,6 +25,11 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        ///
+        player.healthBar = this;
+
         resources = Resources.Instance; //Una referencias para las 
         resources.healthBar = this; //Decirle que esta es la barra
     }
@@ -26,8 +38,11 @@ public class HealthBar : MonoBehaviour
     {
         //Debo cambiarlo
         //Ya que la vida es un int se debe hacer un casteo para asi poder tener numero flotantes para el fillAmount
-        bar.fillAmount = currentHealth / (float)maxHealth; //actualizacion de la barra de vida dividimos lo que hay y el maximo y nos da un porcentaje
+        //bar.fillAmount = currentHealth / (float)maxHealth; //actualizacion de la barra de vida dividimos lo que hay y el maximo y nos da un porcentaje
     }
 
-
+    public void UpdateHealth()
+    {
+        bar.fillAmount = player.Health / (float)player.MaxHealth;
+    }
 }

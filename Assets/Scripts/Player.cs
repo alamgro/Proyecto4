@@ -69,6 +69,7 @@ public class Player : MonoBehaviour, ICharacters
                 health = maxHealth;
 
             //Update health bar
+            healthBar.UpdateHealth();
             //healthBar.UpdateBar();
         }
     }

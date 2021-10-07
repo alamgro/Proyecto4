@@ -9,23 +9,30 @@ public class Loot : MonoBehaviour
     *  A big loot in ground
     */
 
-    public float timer;
+    private float timer;
+    [Header("Value ")]
 
+    public float timeLot; //time for input 
     //min and max amount of recurso to give
     public int minSize, maxSize;
-
     private bool isInside;
-
-    //enum?
-
-
+    private MeshRenderer renderThis;
     //Reference at singleton
     Resources resources;
+
+    /*
+     * entrar  bool
+     * input   space
+     * timer en el imput  dar loot
+     * 
+     */
+
 
     void Start()
     {
         isInside = false;
         resources = Resources.Instance; //initialization
+        renderThis = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -33,37 +40,51 @@ public class Loot : MonoBehaviour
     {
         if(isInside)
         {
-            if(Input.GetKey(KeyCode.Space))
-            {
+            if (Input.GetKeyDown(KeyCode.Space))
+                    timer = 0f;
 
+            if (Input.GetKey(KeyCode.Space))
+            {
+                renderThis.material.color = Color.cyan;
+
+                timer += Time.deltaTime;
+                if(timer >= timeLot)
+                {
+                    timer = 0f;
+                    RandomResources();
+                    gameObject.SetActive(false);
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                timer = 0f;
+                renderThis.material.color = Color.gray;
             }
         }
-    }
 
-    private void OnCollisionEnter(Collision collision)
+    }
+    private void OnTriggerEnter(Collider other)
     {
-        //is inside
-        isInside = true;
+        //collision.contacts[0].thisCollider;
+        if (other.gameObject.CompareTag("Player"))
+            isInside = true;  //is inside
     }
-
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        //is out
-        isInside = false;
-
+        if (other.gameObject.CompareTag("Player"))
+            isInside = false;  //is out
     }
-
+    
     //Selection random of resource amount by each
     private void RandomResources()
     {
-
         //Add at each resource
         resources.wood += RandomAmount();
         resources.junk += RandomAmount();
         resources.plastic += RandomAmount();
         resources.food += RandomAmount();
-        
 
+        resources.UpdateUI();
     }
 
     int  RandomAmount()

@@ -13,8 +13,8 @@ public class RotationCamera : MonoBehaviour
 {
     public GameObject player;
     public int rotationToAdd;
-    public CinemachineVirtualCamera camVirtual;
-    public CinemachineOrbitalTransposer camOrvitsl;
+    //public CinemachineVirtualCamera camVirtual;
+    //public CinemachineOrbitalTransposer camOrvitsl;
 
 
 
