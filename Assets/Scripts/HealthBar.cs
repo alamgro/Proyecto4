@@ -44,5 +44,10 @@ public class HealthBar : MonoBehaviour
     public void UpdateHealth()
     {
         bar.fillAmount = player.Health / (float)player.MaxHealth;
+        //print(bar.fillAmount + "  bar.fillAmount");
+        //print(player.Health + " Health");
+        print(player.Health + " /  " + ((float)player.MaxHealth) + " = " + bar.fillAmount);
+
+
     }
 }

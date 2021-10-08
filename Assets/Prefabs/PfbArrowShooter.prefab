@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1312685781580574339
 Transform:
   m_ObjectHideFlags: 0
@@ -108,5 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f5410e1ffe457643a8f93ceca77ce34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfbArrow: {fileID: 0}
-  spawnTime: 1
+  pfbArrow: {fileID: 2978869172894695623, guid: 764075204dcec5c428504825788d6b1a, type: 3}
+  spawnTime: 1.5

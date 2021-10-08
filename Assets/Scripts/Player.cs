@@ -74,8 +74,9 @@ public class Player : MonoBehaviour, ICharacters
         }
     }
 
-    public int MaxHealth { get; set; }
+        
+    public int MaxHealth { get { return maxHealth; } }
 
-    public HealthBar healthBar { get; set; }
+    public HealthBar healthBar { get { return _healthBar; } set { _healthBar = value; } }
 
 }

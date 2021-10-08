@@ -16,7 +16,10 @@ public class RotationCamera : MonoBehaviour
     //public CinemachineVirtualCamera camVirtual;
     //public CinemachineOrbitalTransposer camOrvitsl;
 
-
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     void Update()
     {
