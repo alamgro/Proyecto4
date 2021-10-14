@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
+
 //Por favor
 public class ManagerIsland : MonoBehaviour
 {
     [SerializeField] private float islandDistance = 0f;
     [SerializeField] private Transform[] islandPositions = null;
+    [ShowAssetPreview(128, 128)]
     [SerializeField] private GameObject pfbIsland = null;
 
     void Update()
