@@ -8,12 +8,6 @@ public class ManagerIsland : MonoBehaviour
     [SerializeField] private Transform[] islandPositions = null;
     [SerializeField] private GameObject pfbIsland = null;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
@@ -27,7 +21,13 @@ public class ManagerIsland : MonoBehaviour
         int randIndex = Random.Range(0, islandPositions.Length);
         Vector3 randPosition = islandPositions[randIndex].position + (Vector3.up* islandDistance);
 
-        Instantiate(_pfbIsland, randPosition , pfbIsland.transform.rotation);
+        //Instantiate island and set its target position and rotation
+        Island island = Instantiate(_pfbIsland, randPosition , pfbIsland.transform.rotation).GetComponent<Island>();
+        Collider islandCollider = island.GetComponent<Collider>();
+        //Rotate island to the correct direction. (islandPositions has the rotation already set up)
+        island.transform.rotation = islandPositions[randIndex].transform.rotation; 
+        //Set the island Target Position with the necessary offset
+        island.TargetPos = islandPositions[randIndex].position + (islandCollider.bounds.extents.z * -island.transform.forward); //
     }
 
 }
