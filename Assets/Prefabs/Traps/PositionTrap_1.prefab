@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4339777707322890537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4339777707322890538}
+  - component: {fileID: 7099741380002322699}
+  m_Layer: 0
+  m_Name: PositionTrap_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4339777707322890538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339777707322890537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2875, y: 1, z: 0.39166668}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7099741380002322699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339777707322890537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0a6508cc9a9a2409badaef264a531a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikes: 1
+  turret: 1
+  spikesData:
+    pfbTrap: {fileID: 267540164429191555, guid: 7cc85d0eeadde1c439f0ee592ea8d1c6, type: 3}
+    offsetY: 0
+    rotationY: 0
+  turretData:
+    pfbTrap: {fileID: 1312685781580574351, guid: 9e59642997e6469448bd3f1395cc7d97, type: 3}
+    offsetY: 0
+    rotationY: 0
+    speed: 0

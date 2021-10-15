@@ -5,9 +5,6 @@ using NaughtyAttributes;
 
 public class Trap : MonoBehaviour
 {
-    [Header("Spawn configuration")]
-    [SerializeField] private int amountTraps = 1; //The total amount of traps in the island
-
     [Header("Traps to spawn")]
     [SerializeField] private bool spikes = false;
     [SerializeField] private bool turret = false;
@@ -38,29 +35,49 @@ public class Trap : MonoBehaviour
         //Opción para poner sus atributos al instanciarlo (cadencia, delay, etc.)
     }
 
+    private enum TrapType { SPIKES, TURRET};
+
     void Start()
     {
-        //Spawn traps
-        for (int i = 0; i < amountTraps; i++)
-        {
-            //spawn
-        }
-    }
+        List<TrapType> spawnList = new List<TrapType>();
+        if (spikes)
+            spawnList.Add(TrapType.SPIKES);
+        if (turret)
+            spawnList.Add(TrapType.TURRET);
 
-    void Update()
-    {
-        
+        if (spawnList.Count < 1)
+            return;
+
+        int randIndex = Random.Range(0, spawnList.Count);
+        TrapType trapToSpawn = spawnList[randIndex];
+
+        switch (trapToSpawn)
+        {
+            case TrapType.SPIKES:
+                SpawnSpikes();
+                break;
+            case TrapType.TURRET:
+                SpawnTurret();
+                break;
+            default:
+                break;
+        }
     }
 
     private void SpawnSpikes()
     {
-        Spikes _spikes = Instantiate(spikesData.pfbTrap).GetComponent<Spikes>();
-        _spikes.transform.localRotation = Quaternion.identity;
+        Spikes _spikes = Instantiate(spikesData.pfbTrap, transform.position, Quaternion.identity).GetComponent<Spikes>(); //Instantiate
+        _spikes.transform.SetParent(transform); //set parent
+        _spikes.transform.position += Vector3.up * spikesData.offsetY; //Set position
+        _spikes.transform.rotation = Quaternion.Euler(Vector3.up * spikesData.rotationY); //Set rotation
     }
     
     private void SpawnTurret()
     {
-
+        ArrowShooter _turret = Instantiate(turretData.pfbTrap, transform.position, Quaternion.identity).GetComponent<ArrowShooter>(); //Instantiate
+        _turret.transform.SetParent(transform); //set parent
+        _turret.transform.position += Vector3.up * turretData.offsetY; //Set position
+        _turret.transform.rotation = Quaternion.Euler(Vector3.up * turretData.rotationY); //Set rotation
     }
 
 }

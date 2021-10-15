@@ -8,6 +8,10 @@ public class Island : MonoBehaviour
     private Vector3 targetPos;
     private bool islandArrived = false;
 
+    private void Awake()
+    {
+        targetPos = transform.position;
+    }
 
     void Update()
     {
