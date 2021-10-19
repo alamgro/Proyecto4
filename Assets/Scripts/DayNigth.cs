@@ -6,60 +6,52 @@ public class DayNigth : MonoBehaviour
 {
     /*
     /* Alexander Iniguez October, 2021
-     * 
+     * Change state of day 
+     * In light
      */
 
-    public float timer;
-    public float speed;
+    private float timer;
+    private float speed;
     public float durationDay; //in seconds 
     public bool isNight;
-    private Light light;
+    private Light sunlight;
     public Color colorNight;
     public Color colorDay;
-    public Light[] lights;
+    public GameObject lights;
 
     void Start()
     {
-        light = GetComponent<Light>();
-        for (int i = 0; i < lights.Length; i++)
-        {
-            lights[i].gameObject.SetActive(false);
-        }
+        sunlight = GetComponent<Light>();
         speed = 360f / durationDay;
         isNight = false;
+
+        lights.gameObject.SetActive(false);
     }
 
     void Update()
     {
+
         timer += Time.deltaTime;
         transform.Rotate(Vector3.right * speed * Time.deltaTime);
 
-
-        //if()
-
             //when the sun is in twilight
-        if(timer >= durationDay/2f+2f)
+        if(timer >= durationDay/2f)
         {
+
             timer = 0f;
                 //change because now is nitgh or day
             isNight = !isNight;
             transform.rotation = Quaternion.Euler(-5f, 0, 0); //new rotation
             if(isNight)
             {
-                light.color = colorNight;
-                for(int i =0; i<lights.Length; i++)
-                {
-                    lights[i].gameObject.SetActive(true);
-                }
+                lights.gameObject.SetActive(true);
+                sunlight.color = colorNight;
             }
             else
             {
-                light.color = colorDay;
+                lights.gameObject.SetActive(false);
+                sunlight.color = colorDay;
 
-                for (int i = 0; i < lights.Length; i++)
-                {
-                    lights[i].gameObject.SetActive(false);
-                }
             }
         }
     }

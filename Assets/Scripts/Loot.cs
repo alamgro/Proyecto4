@@ -89,6 +89,6 @@ public class Loot : MonoBehaviour
 
     int  RandomAmount()
     {
-        return Random.Range(minSize, maxSize);
+        return Random.Range(minSize, maxSize + 1);
     }
 }

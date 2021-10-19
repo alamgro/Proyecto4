@@ -6,46 +6,29 @@ using UnityEngine.UI;
 public class ShowUIRobot : MonoBehaviour
 {
     /* Alexander Iniguez October 2021
-     * show UI of robot who collcion with the mouse pointer
+     * UI robot your life. look the camera 
      * each robot*
      */
 
-    /* Al tocar
-     * prender ui 
-     * pasar la info propietaria del robot 
-     *  
-     * 
-     * Al salir 
-     * apagar el ui
-     * 
-     */
-    public string name;
-    public int energy;
+    public int maxHealth;
+    public int currentHealth;
+    public Image bar;
 
-    public Canvas can;
-
-    public Renderer rend;
-
-    void Start()
+    Camera cam;
+    private void Start()
     {
-        rend = GetComponent<Renderer>();
+        cam = Camera.main;
     }
 
-    // The mesh goes red when the mouse is over it...
-    void OnMouseEnter()
+    private void Update()
     {
-        rend.material.color = Color.red;
+        transform.LookAt(cam.transform.position);
     }
 
-    // ...the red fades out to cyan as the mouse is held over...
-    void OnMouseOver()
+    public void UpdateHealtBarRobot()
     {
-        rend.material.color -= new Color(0.1F, 0, 0) * Time.deltaTime;
+        // bar.fillAmount = robot.Health / (float)robot.MaxHealth;
+
     }
 
-    // ...and the mesh finally turns white when the mouse moves away.
-    void OnMouseExit()
-    {
-        rend.material.color = Color.white;
-    }
 }
