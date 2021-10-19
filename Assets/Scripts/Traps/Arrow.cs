@@ -40,7 +40,7 @@ public class Arrow : MonoBehaviour
     {
         //Check if the collisioned object has the ICharacter component, meaning that it can take damage
         ICharacters characters = collision.gameObject.GetComponent<ICharacters>() ;
-        Debug.Log(collision.gameObject, collision.gameObject);
+        //Debug.Log(collision.gameObject, collision.gameObject);
         if (characters != null)
         {
             characters.TakeDamage(currentDamage);

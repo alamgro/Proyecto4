@@ -10,16 +10,19 @@ public class ManagerIsland : MonoBehaviour
     [SerializeField] private Transform[] islandPositions = null;
     [ShowAssetPreview(128, 128)]
     [SerializeField] private GameObject pfbIsland = null;
+    private GameObject currentIsland;
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
         {
-            SpawnIsland(pfbIsland);
+            if (currentIsland)
+                Destroy(currentIsland);
+            currentIsland = SpawnIsland(pfbIsland);
         }
     }
 
-    private void SpawnIsland(GameObject _pfbIsland)
+    private GameObject SpawnIsland(GameObject _pfbIsland)
     {
         int randIndex = Random.Range(0, islandPositions.Length);
         Vector3 randPosition = islandPositions[randIndex].position + (Vector3.up* islandDistance);
@@ -31,6 +34,8 @@ public class ManagerIsland : MonoBehaviour
         island.transform.rotation = islandPositions[randIndex].transform.rotation; 
         //Set the island Target Position with the necessary offset
         island.TargetPos = islandPositions[randIndex].position + (islandCollider.bounds.extents.z * -island.transform.forward); //
+
+        return island.gameObject;
     }
 
 }

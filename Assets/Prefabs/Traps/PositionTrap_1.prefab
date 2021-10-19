@@ -46,7 +46,7 @@ MonoBehaviour:
   spikes: 1
   turret: 1
   spikesData:
-    pfbTrap: {fileID: 267540164429191555, guid: 7cc85d0eeadde1c439f0ee592ea8d1c6, type: 3}
+    pfbTrap: {fileID: 463846204697515925, guid: 0d470e65f671efc41b00426792928829, type: 3}
     offsetY: 0
     rotationY: 0
   turretData:

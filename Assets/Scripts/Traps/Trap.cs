@@ -66,7 +66,7 @@ public class Trap : MonoBehaviour
 
     private void SpawnSpikes()
     {
-        Spikes _spikes = Instantiate(spikesData.pfbTrap, transform.position, Quaternion.identity).GetComponent<Spikes>(); //Instantiate
+        GameObject _spikes = Instantiate(spikesData.pfbTrap, transform.position, Quaternion.identity); //Instantiate and get parent
         _spikes.transform.SetParent(transform); //set parent
         _spikes.transform.position += Vector3.up * spikesData.offsetY; //Set position
         _spikes.transform.rotation = Quaternion.Euler(Vector3.up * spikesData.rotationY); //Set rotation
@@ -74,7 +74,7 @@ public class Trap : MonoBehaviour
     
     private void SpawnTurret()
     {
-        ArrowShooter _turret = Instantiate(turretData.pfbTrap, transform.position, Quaternion.identity).GetComponent<ArrowShooter>(); //Instantiate
+        GameObject _turret = Instantiate(turretData.pfbTrap, transform.position, Quaternion.identity); //Instantiate
         _turret.transform.SetParent(transform); //set parent
         _turret.transform.position += Vector3.up * turretData.offsetY; //Set position
         _turret.transform.rotation = Quaternion.Euler(Vector3.up * turretData.rotationY); //Set rotation
