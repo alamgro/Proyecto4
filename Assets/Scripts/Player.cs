@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using NaughtyAttributes;
 
 /*
  * Posibilidad de que tenga invulnerabilidad por un tiempo **
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour, ICharacters
 {
     [SerializeField] private float speed; //Player speed
     [SerializeField] private int maxHealth; //Player Max HP
+    [ProgressBar("Health", "maxHealth", EColor.Red)]
     [SerializeField] private int health; //Player HP
     private HealthBar _healthBar;
     private Vector3 dirMovement; //Movement direction of the player
