@@ -42,7 +42,14 @@ public class DayNigth : MonoBehaviour
                 //change because now is nitgh or day
             isNight = !isNight;
             transform.rotation = Quaternion.Euler(-5f, 0, 0); //new rotation
-            if(isNight)
+
+            /*
+             * Se podría hacer así también, con dos líneas de código:
+             * lights.gameObject.SetActive(isNight);
+             * sunlight.color = isNight ? colorNight : colorDay;
+             */
+
+            if (isNight)
             {
                 lights.gameObject.SetActive(true);
                 sunlight.color = colorNight;

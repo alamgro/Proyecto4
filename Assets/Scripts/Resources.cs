@@ -50,4 +50,14 @@ public class Resources : MonoBehaviour
     {
 
     }*/
+
+    public void RemoveHalfResources()
+    {
+        wood = Mathf.RoundToInt(wood / 2f);
+        food = Mathf.RoundToInt(food / 2f);
+        junk = Mathf.RoundToInt(junk / 2f);
+        plastic = Mathf.RoundToInt(plastic / 2f);
+        UpdateUI();
+        print("> Half of resources were removed.");
+    }
 }

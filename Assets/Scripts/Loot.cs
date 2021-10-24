@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class Loot : MonoBehaviour
 {
@@ -76,6 +77,7 @@ public class Loot : MonoBehaviour
     }
     
     //Selection random of resource amount by each
+    [Button("GetResources")]
     private void RandomResources()
     {
         //Add at each resource

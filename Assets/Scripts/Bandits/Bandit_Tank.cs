@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bandit_Normal : Bandit
+public class Bandit_Tank : Bandit
 {
     /*
     void Start()
     {
-        base.Start();
+        
     }
 
     void Update()
     {
-        base.Update();
+        
     }
     */
 }
