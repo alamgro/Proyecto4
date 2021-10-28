@@ -7,6 +7,7 @@ using NaughtyAttributes;
 public class ManagerIsland : MonoBehaviour
 {
     [SerializeField] private float islandDistance = 0f;
+    [InfoBox("Islands will be spawned looking to the Forward axis of the positions GameObjects", EInfoBoxType.Normal)]
     [SerializeField] private Transform[] islandPositions = null;
     [ShowAssetPreview(128, 128)]
     [SerializeField] private GameObject pfbIsland = null;

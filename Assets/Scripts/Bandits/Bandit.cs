@@ -92,7 +92,7 @@ public class Bandit : MonoBehaviour, ICharacters
         foreach (Collider hit in hitColliders)
         {
             //Verify if one of the colliders is the player
-            if (hit.gameObject.CompareTag("Player"))
+            if (hit.gameObject.CompareTag(K.Tag.player))
             {
                 Debug.Log("Player damaged!", gameObject);
                 hit.GetComponent<Player>().TakeDamage(damage);
