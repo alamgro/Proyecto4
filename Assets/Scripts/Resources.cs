@@ -20,6 +20,7 @@ public class Resources : MonoBehaviour
     static Resources instance;
     public HealthBar healthBar;
     public ManagerUI managerUI;
+    public Ship ship;
     public int wood;
     public int food;
     public int junk;
@@ -46,11 +47,6 @@ public class Resources : MonoBehaviour
         managerUI.UpdateUI(); //Funcion lanzada desde el MangerUI
     }
 
-    /*public void AddResource()
-    {
-
-    }*/
-
     public void RemoveHalfResources()
     {
         wood = Mathf.RoundToInt(wood / 2f);
@@ -60,4 +56,144 @@ public class Resources : MonoBehaviour
         UpdateUI();
         print("> Half of resources were removed.");
     }
-}
+
+    //funtion subtract becouse is the cost for upgrate ship
+    public void SubtractResources(int _wood, int _food, int _junk, int _plastic)
+    {
+        wood -= _wood;
+        food -= _food;
+        junk -= _junk;
+        plastic -= _plastic;
+         
+        //update UI 
+        managerUI.UpdateUI(); //Funcion lanzada desde el MangerUI
+        //recursor del player
+        //lo que hay guardado
+        //
+    }
+
+    //almacena el total materiales
+    //Los dados
+
+    public void ComprovacionDeREcursos( )
+    {
+        //lo que se ha dado lo conoce ship
+        //maximo requerido = int
+        /*
+         * maxToRemove = int
+         * 
+         * 
+         */
+        int maxRemove; //el tota a quitar
+
+        #region Wood
+        maxRemove = ship.availableFaces[ship.CurrentFaceIndex].woodRequired - ship.StoredWood;
+
+        //madera > necesitamosMAdera
+
+        if( maxRemove > Wood)
+        {
+            maxRemove = Wood;
+        }
+
+        ship.StoredWood += maxRemove;
+        Wood -= maxRemove;
+        #endregion
+
+
+        #region Junk
+        maxRemove = ship.availableFaces[ship.CurrentFaceIndex].junkRequired - ship.StoredJunk;
+
+        if (maxRemove > Junk)
+        {
+            maxRemove = Junk;
+        }
+
+        ship.StoredJunk += maxRemove;
+        Junk -= maxRemove;
+        #endregion
+
+        #region Plastic
+        maxRemove = ship.availableFaces[ship.CurrentFaceIndex].plasticRequired - ship.StoredPlastic;
+
+        if (maxRemove > Plastic)
+        {
+            maxRemove = Plastic;
+        }
+
+        ship.StoredPlastic += maxRemove;
+        Plastic -= maxRemove;
+        #endregion
+
+
+
+        managerUI.UpdateUI(); //Funcion lanzada desde el MangerUI
+
+    }
+
+    #region SET&GET
+    public int Food
+    {
+        get { return food; }
+        //Food => food 
+
+        set
+        {
+            food = value;
+
+            if (food < 0 )
+            {
+                food = 0;
+            }
+        }
+    }
+
+    public int Wood
+    {
+        get { return wood; }
+        //Food => food 
+
+        set
+        {
+            wood = value;
+
+            if (wood < 0)
+            {
+                wood = 0;
+            }
+        }
+    }
+    public int Junk
+    {
+        get { return junk; }
+        //Food => food 
+
+        set
+        {
+            junk = value;
+
+            if (junk < 0)
+            {
+                junk = 0;
+            }
+        }
+    }
+
+    public int Plastic
+    {
+        get { return plastic; }
+        //Food => food 
+
+        set
+        {
+            plastic = value;
+            if (plastic < 0)
+            {
+                plastic = 0;
+            }
+        }
+    }
+    #endregion
+
+
+}//end class
