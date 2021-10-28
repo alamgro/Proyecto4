@@ -22,12 +22,15 @@ public class Ship : MonoBehaviour
     private int storedWood = 0, storedJunk = 0, storedPlastic = 0; //Current amount of resources used in the ship
     private Color originalColor;
     private MeshRenderer meshRenderer;
+    private Resources resources;
 
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
 
         originalColor = meshRenderer.material.color;
+        resources = Resources.Instance;
+        resources.ship = this;
     }
 
     void Update()
