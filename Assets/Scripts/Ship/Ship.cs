@@ -19,7 +19,7 @@ public class Ship : MonoBehaviour
     private float timerInteraction = 0f;
     private bool canInteract;
     private int currentFaceIndex = 0;
-    private int wood = 0, junk = 0, plastic = 0; //Current amount of resources used in the ship
+    private int storedWood = 0, storedJunk = 0, storedPlastic = 0; //Current amount of resources used in the ship
     private Color originalColor;
     private MeshRenderer meshRenderer;
 
@@ -76,9 +76,9 @@ public class Ship : MonoBehaviour
     {
         Resources resources = Resources.Instance;
 
-        wood += resources.wood;
-        junk += resources.junk;
-        plastic += resources.plastic;
+        storedWood += resources.wood;
+        storedJunk += resources.junk;
+        storedPlastic += resources.plastic;
 
         resources.managerUI.UpdateUI();
     }
@@ -89,6 +89,24 @@ public class Ship : MonoBehaviour
         //if(wood >=)
 
         return true;
+    }
+
+    public int Wood 
+    { 
+        get { return storedWood; }
+        set { storedWood = value; } 
+    }
+
+    public int Junk
+    {
+        get { return storedJunk; }
+        set { storedJunk = value; }
+    }
+
+    public int Plastic
+    {
+        get { return storedPlastic; }
+        set { storedPlastic = value; }
     }
 
 }
