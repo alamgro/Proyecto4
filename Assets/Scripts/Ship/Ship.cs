@@ -75,38 +75,28 @@ public class Ship : MonoBehaviour
     private void UpdateStoredResources()
     {
         Resources resources = Resources.Instance;
-
+        /*
         storedWood += resources.wood;
         storedJunk += resources.junk;
         storedPlastic += resources.plastic;
-
+        */
         resources.managerUI.UpdateUI();
     }
 
     private bool CheckFaseChange()
-    { 
+    {
         //CHECAR SI CAMBIA LA FASE
         //if(wood >=)
 
+        currentFaceIndex++;
         return true;
     }
 
-    public int Wood 
-    { 
-        get { return storedWood; }
-        set { storedWood = value; } 
-    }
+    public int StoredWood { get; set; }
 
-    public int Junk
-    {
-        get { return storedJunk; }
-        set { storedJunk = value; }
-    }
+    public int StoredJunk { get; set; }
 
-    public int Plastic
-    {
-        get { return storedPlastic; }
-        set { storedPlastic = value; }
-    }
+    public int StoredPlastic { get; set; }
 
+    public int CurrentFaceIndex { get; set; }
 }
