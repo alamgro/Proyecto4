@@ -4,17 +4,29 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
+    [System.Serializable]
+    public class Fase
+    {
+        public int faseNumber = 1;
+        public int woodRequired;
+        public int junkRequired;
+        public int plasticRequired;
+    }
 
-    [SerializeField] private float delayToInteract;
+    [SerializeField] private float delayToInteract; //The time that takes to complete an interaction
+    [SerializeField] private Collider colliderInteraction;
+    [SerializeField] private Fase[] availableFaces = new Fase[3];
     private float timerInteraction = 0f;
     private bool canInteract;
+    private int currentFaceIndex = 0;
+    private int wood = 0, junk = 0, plastic = 0; //Current amount of resources used in the ship
     private Color originalColor;
     private MeshRenderer meshRenderer;
-    [SerializeField] private Collider colliderInteraction;
 
     void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+
         originalColor = meshRenderer.material.color;
     }
 
@@ -58,6 +70,25 @@ public class Ship : MonoBehaviour
     {
         if (other.gameObject.CompareTag(K.Tag.player))
             canInteract = false;  //is out
+    }
+
+    private void UpdateStoredResources()
+    {
+        Resources resources = Resources.Instance;
+
+        wood += resources.wood;
+        junk += resources.junk;
+        plastic += resources.plastic;
+
+        resources.managerUI.UpdateUI();
+    }
+
+    private bool CheckFaseChange()
+    { 
+        //CHECAR SI CAMBIA LA FASE
+        //if(wood >=)
+
+        return true;
     }
 
 }
