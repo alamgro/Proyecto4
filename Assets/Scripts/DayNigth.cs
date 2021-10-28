@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class DayNigth : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class DayNigth : MonoBehaviour
     private Light sunlight;
     public Color colorNight;
     public Color colorDay;
+    
     public GameObject lights;
 
     void Start()
@@ -30,36 +32,19 @@ public class DayNigth : MonoBehaviour
 
     void Update()
     {
-
         timer += Time.deltaTime;
         transform.Rotate(Vector3.right * speed * Time.deltaTime);
 
             //when the sun is in twilight
         if(timer >= durationDay/2f)
         {
-
             timer = 0f;
                 //change because now is nitgh or day
             isNight = !isNight;
             transform.rotation = Quaternion.Euler(-5f, 0, 0); //new rotation
 
-            /*
-             * Se podría hacer así también, con dos líneas de código:
-             * lights.gameObject.SetActive(isNight);
-             * sunlight.color = isNight ? colorNight : colorDay;
-             */
-
-            if (isNight)
-            {
-                lights.gameObject.SetActive(true);
-                sunlight.color = colorNight;
-            }
-            else
-            {
-                lights.gameObject.SetActive(false);
-                sunlight.color = colorDay;
-
-            }
+            lights.gameObject.SetActive(isNight);
+            sunlight.color = isNight ? colorNight : colorDay;
         }
     }
 }

@@ -757,11 +757,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7884182127120004158, guid: 93bef33cba00f704dba4477f089b71f8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8993866
+      value: 0.8993865
       objectReference: {fileID: 0}
     - target: {fileID: 7884182127120004158, guid: 93bef33cba00f704dba4477f089b71f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.43714687
+      value: 0.4371469
       objectReference: {fileID: 0}
     - target: {fileID: 7884182127120004158, guid: 93bef33cba00f704dba4477f089b71f8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -773,11 +773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7884182127684268847, guid: 93bef33cba00f704dba4477f089b71f8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8993866
+      value: 0.8993865
       objectReference: {fileID: 0}
     - target: {fileID: 7884182127684268847, guid: 93bef33cba00f704dba4477f089b71f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.43714687
+      value: 0.4371469
       objectReference: {fileID: 0}
     - target: {fileID: 7884182127684268847, guid: 93bef33cba00f704dba4477f089b71f8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -962,6 +962,10 @@ PrefabInstance:
     - target: {fileID: 955435939026752140, guid: 6a8e99cb7ec80a0488ec70704e128123, type: 3}
       propertyPath: m_Name
       value: Bandit_Normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8746065341998466138, guid: 6a8e99cb7ec80a0488ec70704e128123, type: 3}
+      propertyPath: m_Constraints
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a8e99cb7ec80a0488ec70704e128123, type: 3}

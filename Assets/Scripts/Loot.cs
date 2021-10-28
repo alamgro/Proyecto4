@@ -44,7 +44,7 @@ public class Loot : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
                     timer = 0f;
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetButtonDown("Interact"))
             {
                 renderThis.material.color = Color.cyan;
 
