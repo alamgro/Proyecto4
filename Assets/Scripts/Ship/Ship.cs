@@ -15,7 +15,7 @@ public class Ship : MonoBehaviour
 
     [SerializeField] private float delayToInteract; //The time that takes to complete an interaction
     [SerializeField] private Collider colliderInteraction;
-    [SerializeField] private Fase[] availableFaces = new Fase[3];
+    public Fase[] availableFaces = new Fase[3];
     private float timerInteraction = 0f;
     private bool canInteract;
     private int currentFaceIndex = 0;
