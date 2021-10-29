@@ -15,11 +15,12 @@ public class Ship : MonoBehaviour
 
     [SerializeField] private float delayToInteract; //The time that takes to complete an interaction
     [SerializeField] private Collider colliderInteraction;
+    [SerializeField]
+    private int storedWood = 0, storedJunk = 0, storedPlastic = 0; //Current amount of resources used in the ship
     public Fase[] availableFaces = new Fase[3];
     private float timerInteraction = 0f;
     private bool canInteract;
     private int currentFaceIndex = 0;
-    private int storedWood = 0, storedJunk = 0, storedPlastic = 0; //Current amount of resources used in the ship
     private Color originalColor;
     private MeshRenderer meshRenderer;
     private Resources resources;
@@ -47,6 +48,7 @@ public class Ship : MonoBehaviour
             {
                 timerInteraction = 0f;
                 meshRenderer.material.color = Color.green;
+                resources.ComprovacionDeREcursos();
                 Debug.Log("Nave reparada", gameObject);
                 //Lógica de agregar recursos a la nave
             }
@@ -75,17 +77,6 @@ public class Ship : MonoBehaviour
             canInteract = false;  //is out
     }
 
-    private void UpdateStoredResources()
-    {
-        Resources resources = Resources.Instance;
-        /*
-        storedWood += resources.wood;
-        storedJunk += resources.junk;
-        storedPlastic += resources.plastic;
-        */
-        resources.managerUI.UpdateUI();
-    }
-
     private bool CheckFaseChange()
     {
         //CHECAR SI CAMBIA LA FASE
@@ -95,11 +86,11 @@ public class Ship : MonoBehaviour
         return true;
     }
 
-    public int StoredWood { get; set; }
+    public int StoredWood { get { return storedWood; } set { storedWood = value; } }
 
-    public int StoredJunk { get; set; }
+    public int StoredJunk { get { return storedJunk; } set { storedJunk = value; } }
 
-    public int StoredPlastic { get; set; }
+    public int StoredPlastic { get { return storedPlastic; } set { storedPlastic = value; } }
 
-    public int CurrentFaceIndex { get; set; }
+    public int CurrentFaceIndex { get { return currentFaceIndex; } set { currentFaceIndex = value; } }
 }
