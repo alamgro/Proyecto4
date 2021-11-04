@@ -96,8 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeed582ec1a1ad448a26fd15e0d529e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayToInteract: 2
-  colliderInteraction: {fileID: 4207632027318185527}
   availableFaces:
   - faseNumber: 1
     woodRequired: 25
@@ -111,6 +109,12 @@ MonoBehaviour:
     woodRequired: 250
     junkRequired: 150
     plasticRequired: 150
+  storedWood: 0
+  storedJunk: 0
+  storedPlastic: 0
+  delayToInteract: 0.5
+  colliderInteraction: {fileID: 4207632027318185527}
+  currentFaceIndex: 0
 --- !u!65 &7564002261845318725
 BoxCollider:
   m_ObjectHideFlags: 0

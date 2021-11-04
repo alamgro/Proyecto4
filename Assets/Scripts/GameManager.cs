@@ -25,7 +25,21 @@ public class GameManager : MonoBehaviour
     [RuntimeInitializeOnLoadMethod] //Se llama cuando inicia el juego, solo afecta la primera funcion de abajo de ella
     static void AutoCreate()
     {
-        _instance = new GameObject("GameManager").AddComponent<GameManager>();
-        DontDestroyOnLoad(_instance.gameObject);
+        if (!SceneManager.GetActiveScene().name.Equals(K.Scene.gameOver))
+        {
+            _instance = new GameObject("GameManager").AddComponent<GameManager>();
+                    DontDestroyOnLoad(_instance.gameObject);
+        }
+    }
+
+    //It will be called when the win condition is met
+    public void GameFinished()
+    {
+        SceneManager.LoadScene(K.Scene.gameOver);
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(K.Scene.alam);
     }
 }

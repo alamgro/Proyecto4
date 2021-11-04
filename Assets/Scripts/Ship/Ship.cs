@@ -12,15 +12,16 @@ public class Ship : MonoBehaviour
         public int junkRequired;
         public int plasticRequired;
     }
+    public Fase[] availableFaces = new Fase[3];
 
-    [SerializeField] private float delayToInteract; //The time that takes to complete an interaction
-    [SerializeField] private Collider colliderInteraction;
     [SerializeField]
     private int storedWood = 0, storedJunk = 0, storedPlastic = 0; //Current amount of resources used in the ship
-    public Fase[] availableFaces = new Fase[3];
+    [SerializeField] private float delayToInteract; //The time that takes to complete an interaction
+    [SerializeField] private Collider colliderInteraction;
     private float timerInteraction = 0f;
+    
     private bool canInteract;
-    private int currentFaceIndex = 0;
+    [SerializeField] private int currentFaceIndex = 0; //CUIDAR QUE NO SE PASE DEL INDEX MÁXIMO
     private Color originalColor;
     private MeshRenderer meshRenderer;
     private Resources resources;
@@ -49,8 +50,8 @@ public class Ship : MonoBehaviour
                 timerInteraction = 0f;
                 meshRenderer.material.color = Color.green;
                 resources.ComprovacionDeREcursos();
-                Debug.Log("Nave reparada", gameObject);
-                //Lógica de agregar recursos a la nave
+                //Check if the fase changed with the resources added
+                CheckFaseChange();
             }
         }
         if (Input.GetButtonUp(K.Input.interact))
@@ -71,19 +72,32 @@ public class Ship : MonoBehaviour
         if (other.gameObject.CompareTag(K.Tag.player))
             canInteract = true;  //is inside
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag(K.Tag.player))
             canInteract = false;  //is out
     }
 
-    private bool CheckFaseChange()
+    private void CheckFaseChange()
     {
-        //CHECAR SI CAMBIA LA FASE
-        //if(wood >=)
+        //Validate if it already has the necessary resources to change to the next face
+       if(storedWood >= availableFaces[currentFaceIndex].woodRequired
+            && storedJunk >= availableFaces[currentFaceIndex].junkRequired
+            && storedPlastic >= availableFaces[currentFaceIndex].plasticRequired)
+        {
+            storedWood = storedJunk = storedPlastic = 0; //Reset stored resources
 
-        currentFaceIndex++;
-        return true;
+            //Check wheather it is a fase change, if it hits the maximum fase, the game is finished
+            if(currentFaceIndex < availableFaces.Length - 1)
+            {
+                Debug.LogWarning("Cambio de fase.");
+                currentFaceIndex++;
+            }
+            else
+                GameManager.Instance.GameFinished();
+
+        }
     }
 
     public int StoredWood { get { return storedWood; } set { storedWood = value; } }
@@ -93,4 +107,5 @@ public class Ship : MonoBehaviour
     public int StoredPlastic { get { return storedPlastic; } set { storedPlastic = value; } }
 
     public int CurrentFaceIndex { get { return currentFaceIndex; } set { currentFaceIndex = value; } }
+
 }
