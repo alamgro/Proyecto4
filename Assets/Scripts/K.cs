@@ -13,4 +13,10 @@ public class K
     {
         public const string player = "Player";
     }
+
+    public class Scene
+    {
+        public const string gameOver = "GameOver";
+        public const string alam = "Alam";
+    }
 }
