@@ -34,14 +34,14 @@ public class RespawLoot : MonoBehaviour
         
     }
 
-    private float MaxAndMinCollider()
+    private void MaxAndMinCollider()
     {
         float position;
         float min , max;
 
-        min 
+       // min 
 
 
-        return position;
+       // return position;
     }
 }
