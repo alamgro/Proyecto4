@@ -49,7 +49,7 @@ public class Ship : MonoBehaviour
             {
                 timerInteraction = 0f;
                 meshRenderer.material.color = Color.green;
-                resources.ComprovacionDeREcursos();
+                resources.CheckAndSubstractResource();
                 //Check if the fase changed with the resources added
                 CheckFaseChange();
             }
