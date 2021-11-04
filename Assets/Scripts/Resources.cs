@@ -75,7 +75,7 @@ public class Resources : MonoBehaviour
     //almacena el total materiales
     //Los dados
 
-    public void CheckAndSubstractResource()
+    public void CheckAndSubstract()
     {
         //lo que se ha dado lo conoce ship
         //maximo requerido = int

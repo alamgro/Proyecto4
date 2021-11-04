@@ -7,6 +7,9 @@ using System.Collections.Generic;
  */
 public interface ICharacters
 {
+    public int Health { get; set; }
+    public int MaxHealth { get; }
+
     public void TakeDamage(int _damage = 1);
 
     public void Attack();

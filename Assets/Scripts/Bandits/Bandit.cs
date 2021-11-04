@@ -26,6 +26,11 @@ public class Bandit : MonoBehaviour, ICharacters
     protected Vector3 dirMovement; //Movement direction
     protected Rigidbody rb;
 
+    private void Awake()
+    {
+        health = maxHealth;
+
+    }
     protected void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -71,6 +76,8 @@ public class Bandit : MonoBehaviour, ICharacters
         get { return speed; }
         set { speed = value; }
     }
+
+   // int ICharacters.MaxHealth { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     public void TakeDamage(int _damage)
     {
