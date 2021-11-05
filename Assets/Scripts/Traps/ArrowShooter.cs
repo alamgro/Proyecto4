@@ -43,4 +43,13 @@ public class ArrowShooter : MonoBehaviour
         poolArrows.Add(Instantiate(pfbArrow, transform.position, transform.rotation));
         return poolArrows[poolArrows.Count - 1];
     }
+
+    //Destroy arrows when this item is destroyed
+    private void OnDestroy()
+    {
+        foreach (GameObject arrow in poolArrows)
+        {
+            Destroy(arrow);
+        }
+    }
 }

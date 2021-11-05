@@ -21,7 +21,7 @@ public class Ship : MonoBehaviour
     private float timerInteraction = 0f;
     
     private bool canInteract;
-    [SerializeField] private int currentFaceIndex = 0; //CUIDAR QUE NO SE PASE DEL INDEX MÁXIMO
+    private int currentFaceIndex = 0; //CUIDAR QUE NO SE PASE DEL INDEX MÁXIMO
     private Color originalColor;
     private MeshRenderer meshRenderer;
     private Resources resources;
@@ -98,6 +98,12 @@ public class Ship : MonoBehaviour
                 GameManager.Instance.GameFinished();
 
         }
+    }
+
+    private void ChangeShipAppearance(int _toIndex)
+    {
+        //cambiar el modelo 3d de la nave
+        //Es para cuando cambia de fase
     }
 
     public int StoredWood { get { return storedWood; } set { storedWood = value; } }

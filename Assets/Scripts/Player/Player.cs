@@ -89,7 +89,7 @@ public class Player : MonoBehaviour, ICharacters
             health = value;
 
             //Values verification
-            if (health < 0)
+            if (health <= 0)
             {
                 health = 0;
                 Die();
@@ -117,9 +117,11 @@ public class Player : MonoBehaviour, ICharacters
     public void Die()
     {
         Resources.Instance.RemoveHalfResources(); //Death penalization
-        transform.position = Vector3.zero; //reset position
+        transform.position = Vector3.up * 3f; //reset position
         rb.velocity = rb.angularVelocity = Vector3.zero; //Stop from moving
         AudioSource.PlayClipAtPoint(audioDeath, transform.position); //Play death audio
+        Health = MaxHealth;
+
     }
 
     public void Attack()

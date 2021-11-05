@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: 100
-  initialDamage: 1
+  initialDamage: 4
   despawnTime: 3
 --- !u!54 &3665363267448708041
 Rigidbody:

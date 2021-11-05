@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1312685781580574349}
   - component: {fileID: 1312685781580574350}
   - component: {fileID: 8389100944154612783}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: PfbArrowShooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,4 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfbArrow: {fileID: 2978869172894695623, guid: 764075204dcec5c428504825788d6b1a, type: 3}
-  spawnTime: 1.5
+  spawnTime: 1

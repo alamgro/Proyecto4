@@ -43,7 +43,8 @@ public class DayNigth : MonoBehaviour
             isNight = !isNight;
             transform.rotation = Quaternion.Euler(-5f, 0, 0); //new rotation
 
-            lights.gameObject.SetActive(isNight);
+            if(lights)
+                lights.gameObject.SetActive(isNight);
             sunlight.color = isNight ? colorNight : colorDay;
         }
     }
