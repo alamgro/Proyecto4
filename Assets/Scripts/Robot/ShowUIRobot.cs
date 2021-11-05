@@ -25,10 +25,10 @@ public class ShowUIRobot : MonoBehaviour
         transform.LookAt(cam.transform.position);
     }
 
-    public void UpdateHealtBarRobot()
+    /*public void UpdateHealtBarRobot()
     {
         // bar.fillAmount = robot.Health / (float)robot.MaxHealth;
 
-    }
+    }*/
 
 }

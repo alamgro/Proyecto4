@@ -41,10 +41,10 @@ public class Loot : MonoBehaviour
     {
         if(isInside)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Interact"))
                     timer = 0f;
 
-            if (Input.GetButtonDown("Interact"))
+            if (Input.GetButton("Interact"))
             {
                 renderThis.material.color = Color.cyan;
 
@@ -53,10 +53,9 @@ public class Loot : MonoBehaviour
                 {
                     timer = 0f;
                     RandomResources();
-                    gameObject.SetActive(false);
                 }
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetButtonUp("Interact"))
             {
                 timer = 0f;
                 renderThis.material.color = Color.gray;
@@ -73,7 +72,12 @@ public class Loot : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
+        {
             isInside = false;  //is out
+            renderThis.material.color = Color.gray;
+            timer = 0f;
+
+        }
     }
     
     //Selection random of resource amount by each
@@ -87,6 +91,9 @@ public class Loot : MonoBehaviour
         resources.food += RandomAmount();
 
         resources.UpdateUI();
+
+        gameObject.SetActive(false);
+
     }
 
     int  RandomAmount()
