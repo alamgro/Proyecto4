@@ -18,6 +18,7 @@ public class Player : MonoBehaviour, ICharacters
     [SerializeField] private int maxHealth; //Player Max HP
     [SerializeField] private float speed; //Player speed
     [SerializeField] private float jumpHeight; //Player jump force
+    [SerializeField] private float turnSpeed; //Player turning speed at the moment of rotation
     [SerializeField] private LayerMask layerJump;
     [SerializeField] private AudioClip audioDeath;
     private float jumpForce; //Final force that will be applied
@@ -64,7 +65,10 @@ public class Player : MonoBehaviour, ICharacters
         //Rotate player to the same direction it is moving to
         if (dirMovement != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(dirMovement); //Rotate
+            //transform.rotation = Quaternion.LookRotation(dirMovement); //Rotate
+            Quaternion targetRotation = Quaternion.LookRotation(dirMovement, Vector3.up);
+
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, turnSpeed * Time.deltaTime); //Rotate
         }
         #endregion
 

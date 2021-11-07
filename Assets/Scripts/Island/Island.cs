@@ -40,11 +40,9 @@ public class Island : MonoBehaviour
     [Button("Try Generate Robot")]
     private void TryGenerateRobot()
     {
-        //print(randNum);
         if (Random.Range(0, 101) <= spawnRobotProbability)
         {
             GameObject _robot = Instantiate(pfbRobot, robotPosition.position, robotPosition.rotation);
-            //_robot.transform.SetParent(transform);
         }
     }
 

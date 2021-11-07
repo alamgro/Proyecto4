@@ -27,19 +27,16 @@ public class RotationCamera : MonoBehaviour
         //equalize position pivot and player
         transform.position = player.transform.position;
 
-        //condition for chenge angle pivot
-        if (Input.GetKeyDown(KeyCode.E))
+        #region CHANGE PIVOT ANGLE
+        if (Input.GetButtonDown(K.Input.rotateRight))
         {
-            transform.Rotate(Vector3.up * rotationToAdd);
-
-            //Que haga lo que tenga que hacer
-            //camVirtual.GetCinemachineComponent<CinemachineComposer>().m_BiasY = 0;
+            transform.Rotate(Vector3.up * (360f + rotationToAdd));
         }
 
-        //condition for chenge angle pivot
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown(K.Input.rotateLeft))
         {
-            transform.Rotate(Vector3.up * (360f -rotationToAdd));
+            transform.Rotate(Vector3.up * (360f - rotationToAdd));
         }
+        #endregion
     }
 }

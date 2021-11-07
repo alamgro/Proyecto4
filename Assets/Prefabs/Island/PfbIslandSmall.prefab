@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  spawnRobotProbability: 100
+  spawnRobotProbability: 10
   robotPosition: {fileID: 8411372979795863919}
   pfbRobot: {fileID: 3090034627055337767, guid: bca29a6639c023f49a4ca33b1f1cad25, type: 3}
 --- !u!1001 &1619741600

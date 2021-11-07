@@ -7,6 +7,8 @@ public class K
     {
         public const string interact = "Interact";
         public const string jump = "Jump";
+        public const string rotateRight = "RotateRight";
+        public const string rotateLeft = "RotateLeft";
     }
 
     public class Tag

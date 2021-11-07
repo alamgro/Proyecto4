@@ -46,7 +46,6 @@ public class Arrow : MonoBehaviour
             characters.TakeDamage(currentDamage);
         }
 
-        print("Layer " + collision.gameObject.layer);
         if(collision.gameObject.layer != LayerMask.NameToLayer("TransparentFX"))
         {
             TurnOffArrow();

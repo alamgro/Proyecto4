@@ -182,6 +182,7 @@ MonoBehaviour:
   maxHealth: 10
   speed: 10
   jumpHeight: 1.25
+  turnSpeed: 1000
   layerJump:
     serializedVersion: 2
     m_Bits: 247

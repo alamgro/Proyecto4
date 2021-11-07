@@ -27,7 +27,8 @@ public class DayNigth : MonoBehaviour
         speed = 360f / durationDay;
         isNight = false;
 
-        lights.gameObject.SetActive(false);
+        if(lights)
+            lights.gameObject.SetActive(false);
     }
 
     void Update()
