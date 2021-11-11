@@ -141,7 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d727a9bb0f4fd74429b726d5aade7546, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  managerIsland: {fileID: 0}
   speed: 10
+  timeToBeLanded: 0.1
   spawnRobotProbability: 10
   robotPosition: {fileID: 8411372979795863919}
   pfbRobot: {fileID: 3090034627055337767, guid: bca29a6639c023f49a4ca33b1f1cad25, type: 3}

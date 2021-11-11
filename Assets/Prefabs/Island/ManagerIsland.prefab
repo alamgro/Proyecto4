@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandDistance: 30
+  maxActiveIslands: 1
+  spawnCooldown: 1
   islandPositions:
   - {fileID: 0}
-  pfbIsland: {fileID: 6547577523649854713, guid: ab930844c70026b4c9e0bbf095027461, type: 3}
+  pfbIslands: []

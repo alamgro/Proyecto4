@@ -82,7 +82,7 @@ public class Bandit : MonoBehaviour, ICharacters
     public void TakeDamage(int _damage)
     {
         Health -= _damage;
-        Debug.Log("Get damage", gameObject);
+        //Debug.Log("Get damage", gameObject);
     }
 
     [Button("Attack")]
