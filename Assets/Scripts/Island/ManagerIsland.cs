@@ -12,7 +12,10 @@ public class ManagerIsland : MonoBehaviour
 
     [SerializeField] private float islandDistance = 0f;
     [SerializeField] private int maxActiveIslands; //The max number of islands that can exists
+    [Tooltip("Time in minutes")]
     [SerializeField] private float spawnCooldown;
+    [InfoBox("Debug: if this is true, the island will automatically spawn.", EInfoBoxType.Normal)]
+    [SerializeField] private bool manualSpawn;
     [InfoBox("Islands will be spawned looking to the Forward axis of the positions GameObjects", EInfoBoxType.Normal)]
     [SerializeField] private Transform[] islandPositions = null;
     [ShowAssetPreview(128, 128)]
@@ -22,6 +25,10 @@ public class ManagerIsland : MonoBehaviour
     private void Start()
     {
         ocupiedIslandPositions = new bool[islandPositions.Length];
+        spawnCooldown *= 60f; //Convert to minutes
+
+        if (!manualSpawn)
+            SpawnIslands();
     }
 
     void Update()
@@ -53,6 +60,7 @@ public class ManagerIsland : MonoBehaviour
             print("Generating island: #" + i);
             GenerateIsland();
         }
+        SpawnIslands();
     }
 
     private void GenerateIsland()

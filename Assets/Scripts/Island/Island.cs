@@ -11,16 +11,19 @@ public class Island : MonoBehaviour
 
     [SerializeField] private float speed = 0f;
     [Tooltip("Time in minutes")]
-    [SerializeField] private float timeToBeLanded; //Time that will be landed (in minutes) 
+    [MinMaxSlider(0.1f, 10f)]
+    [SerializeField] private Vector2 rangeTimeToBeLanded; //Time that will be landed (in minutes) 
     [Header("Robot spawn parameters")]
     [Range(0, 100)]
     [SerializeField] private int spawnRobotProbability;
     [SerializeField] private Transform robotPosition;
     [SerializeField] private GameObject pfbRobot;
+    private float timeToBeLanded;
     private int ocupiedPosition;
     private float currentTimeLanded = 0f;
     private Vector3 targetPos;
     private bool islandArrived = false;
+    private const float distanceToDispear = 50f;
 
     private void Awake()
     {
@@ -30,7 +33,7 @@ public class Island : MonoBehaviour
     private void Start()
     {
         managerIsland.CurrentActiveIslands++;
-        timeToBeLanded *= 60f;
+        timeToBeLanded = 60f * Random.Range(rangeTimeToBeLanded.x, rangeTimeToBeLanded.y); //Multiplied by 60 because it is time in minutes
     }
 
     void Update()
@@ -80,7 +83,7 @@ public class Island : MonoBehaviour
     //Move island down and then destroy it
     private IEnumerator TakeOffIsland()
     {
-        while(transform.position.y >= -200f)
+        while(transform.position.y >= -distanceToDispear)
         {
             transform.position += Vector3.down * speed * Time.deltaTime;
             yield return null;

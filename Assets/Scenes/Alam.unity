@@ -1472,6 +1472,14 @@ PrefabInstance:
       value: ManagerIsland
       objectReference: {fileID: 0}
     - target: {fileID: 8186759401266879897, guid: 1e286cfcfe303484fb679f4694034286, type: 3}
+      propertyPath: manualSpawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186759401266879897, guid: 1e286cfcfe303484fb679f4694034286, type: 3}
+      propertyPath: spawnCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186759401266879897, guid: 1e286cfcfe303484fb679f4694034286, type: 3}
       propertyPath: maxActiveIslands
       value: 4
       objectReference: {fileID: 0}

@@ -43,9 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74b84a3fd77da604089821583d887c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ocupiedIslandPositions: 
   islandDistance: 30
   maxActiveIslands: 1
   spawnCooldown: 1
+  manualSpawn: 1
   islandPositions:
   - {fileID: 0}
   pfbIslands: []

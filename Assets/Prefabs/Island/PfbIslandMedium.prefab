@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerIsland: {fileID: 0}
   speed: 10
-  timeToBeLanded: 0.1
+  rangeTimeToBeLanded: {x: 4, y: 8}
   spawnRobotProbability: 15
   robotPosition: {fileID: 8384921274572544754}
   pfbRobot: {fileID: 0}
