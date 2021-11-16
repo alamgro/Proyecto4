@@ -8,6 +8,7 @@ TagManager:
   - Ally
   - Enemy
   - Neutral
+  - Ground
   layers:
   - Default
   - TransparentFX

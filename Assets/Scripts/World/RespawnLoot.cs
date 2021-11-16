@@ -42,7 +42,7 @@ public class RespawnLoot : MonoBehaviour
         z = Random.Range(Collider.bounds.min.z, Collider.bounds.max.z);
         x = Random.Range(Collider.bounds.min.x, Collider.bounds.max.x);
 
-        position = new Vector3(x, transform.position.y, z);
+        position = new Vector3(x, Collider.transform.position.y, z);
 
         return position;
     }

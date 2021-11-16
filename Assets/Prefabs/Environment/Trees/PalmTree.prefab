@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2034496709087335487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7355080519603049328}
+  - component: {fileID: 5323325811938189176}
+  m_Layer: 0
+  m_Name: RespawnCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7355080519603049328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034496709087335487}
+  m_LocalRotation: {x: -0.0000000218557, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5187592900299315950}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5323325811938189176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034496709087335487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.605445, y: 1.4281158, z: 1.9785194}
+  m_Center: {x: 0.7055068, y: 3.9955373, z: -0.02010727}
 --- !u!136 &3243417393912559717
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10,10 +54,39 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.34
-  m_Height: 2
+  m_Radius: 0.29186535
+  m_Height: 1.3321327
   m_Direction: 1
-  m_Center: {x: 0.27, y: 1, z: 0}
+  m_Center: {x: 0.011277199, y: 0.37725896, z: 6.4590773e-16}
+--- !u!114 &5316400407347894340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187592900299081422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f85d442eb8e994db5823b67e84bf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToCollision: 30
+--- !u!114 &8716937108381179290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5187592900299081422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc00927981efa04e91ad76478301f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 5323325811938189176}
+  lootsTypes:
+  - {fileID: 3090034627055337767, guid: bca29a6639c023f49a4ca33b1f1cad25, type: 3}
+  timeToRespawn: 60
 --- !u!1001 &5187592900299178094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,5 +155,10 @@ PrefabInstance:
 --- !u!1 &5187592900299081422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 819c10f136958e549bf2eb4702b8f111, type: 3}
+  m_PrefabInstance: {fileID: 5187592900299178094}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5187592900299315950 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 819c10f136958e549bf2eb4702b8f111, type: 3}
   m_PrefabInstance: {fileID: 5187592900299178094}
   m_PrefabAsset: {fileID: 0}

@@ -9,13 +9,14 @@ public class RespawnOnTree : MonoBehaviour
      * tree Collider 
      */
     //who will call
-    [SerializeField] private RespawnLoot respawnLoot;
+    private RespawnLoot respawnLoot;
     private float timer;
     [SerializeField] private float timeToCollision;
     private bool canRespawn;
 
     void Start()
     {
+        respawnLoot = GetComponent<RespawnLoot>();
         this.enabled = true;
         timer = 0;
         canRespawn = false;
