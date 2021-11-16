@@ -19,7 +19,6 @@ public class RespawnLoot : MonoBehaviour
     void Start()
     {
             timer = 0;
-
     }
 
     // Update is called once per frame
@@ -43,7 +42,6 @@ public class RespawnLoot : MonoBehaviour
         x = Random.Range(Collider.bounds.min.x, Collider.bounds.max.x);
 
         position = new Vector3(x, Collider.transform.position.y, z);
-
         return position;
     }
 

@@ -1549,7 +1549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f85d442eb8e994db5823b67e84bf2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnLoot: {fileID: 1786699872}
   timeToCollision: 60
 --- !u!65 &1870863051
 BoxCollider:

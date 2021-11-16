@@ -119,8 +119,8 @@ public class Bandit : MonoBehaviour, ICharacters
             tempRb = Instantiate(pfbResources[randIndex], transform.position, Random.rotation).GetComponent<Rigidbody>();
             tempRb.AddExplosionForce(50f, transform.position + Random.insideUnitSphere, 1f);
             AudioSource.PlayClipAtPoint(audioPop, transform.position);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 
     //public HealthBar healthBar { get { return _healthBar; } set { _healthBar = value; } }
