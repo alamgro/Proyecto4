@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 10
-  speed: 10
+  speed: 15
   jumpHeight: 1.25
   turnSpeed: 1000
   layerJump:

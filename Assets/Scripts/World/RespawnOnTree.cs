@@ -14,13 +14,16 @@ public class RespawnOnTree : MonoBehaviour
     [SerializeField] private float timeToCollision;
     private bool canRespawn;
 
+
+    //Restart Variables
     void Start()
     {
-        respawnLoot = GetComponent<RespawnLoot>();
+        if (!respawnLoot)
+            respawnLoot = GetComponent<RespawnLoot>();
+
         this.enabled = true;
         timer = 0;
         canRespawn = false;
-
     }
 
     void Update()

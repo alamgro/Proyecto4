@@ -14,6 +14,9 @@ public class K
     public class Tag
     {
         public const string player = "Player";
+        public const string enemy = "Enemy";
+        public const string ally = "Ally";
+        public const string neutral = "Neutral";
     }
 
     public class Scene

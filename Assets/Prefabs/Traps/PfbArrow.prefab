@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8811134672584057484}
   m_Layer: 0
   m_Name: PfbArrow
-  m_TagString: Neutral
+  m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: 100
-  initialDamage: 4
+  initialDamage: 1
   despawnTime: 3
 --- !u!54 &3665363267448708041
 Rigidbody:

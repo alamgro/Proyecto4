@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc00927981efa04e91ad76478301f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 2372664606626072652}
+  colliderSpawn: {fileID: 2372664606626072652}
   lootsTypes:
   - {fileID: 3090034627055337767, guid: bca29a6639c023f49a4ca33b1f1cad25, type: 3}
   timeToRespawn: 60

@@ -10,25 +10,18 @@ public class ShowUIRobot : MonoBehaviour
      * each robot*
      */
 
-    public int maxHealth;
-    public int currentHealth;
     public Image bar;
 
     Camera cam;
+
     private void Start()
     {
         cam = Camera.main;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         transform.LookAt(cam.transform.position);
     }
-
-    /*public void UpdateHealtBarRobot()
-    {
-        // bar.fillAmount = robot.Health / (float)robot.MaxHealth;
-
-    }*/
 
 }

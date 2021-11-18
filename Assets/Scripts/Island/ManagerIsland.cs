@@ -31,14 +31,6 @@ public class ManagerIsland : MonoBehaviour
             SpawnIslands();
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-             SpawnIslands();
-        }
-    }
-
     [Button("Spawn Island")]
     public async void SpawnIslands()
     {

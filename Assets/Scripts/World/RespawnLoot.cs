@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class RespawnLoot : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class RespawnLoot : MonoBehaviour
      * Put loot with ratio of one collider, respawn type of you put
      * Collider trigger
      */
-    [SerializeField] private Collider Collider;
+    [SerializeField] private Collider colliderSpawn;
+    [ValidateInput("ValidateLootTypes", "The array can't be empty")]
     [SerializeField] private GameObject[] lootsTypes;
     private float timer;
     [SerializeField] private float timeToRespawn;
@@ -35,28 +37,26 @@ public class RespawnLoot : MonoBehaviour
 
     private Vector3 InCollider()
     {
-        Vector3 position;
-        float z , x;
+        Vector3 pos;
 
-        z = Random.Range(Collider.bounds.min.z, Collider.bounds.max.z);
-        x = Random.Range(Collider.bounds.min.x, Collider.bounds.max.x);
+        pos.x = Random.Range(colliderSpawn.bounds.min.x, colliderSpawn.bounds.max.x);
+        pos.y = colliderSpawn.transform.position.y + colliderSpawn.bounds.center.y;
+        pos.z = Random.Range(colliderSpawn.bounds.min.z, colliderSpawn.bounds.max.z);
 
-        position = new Vector3(x, Collider.transform.position.y, z);
-        return position;
+        print(pos);
+        return pos;
     }
 
     public void InstanceLoot()
     {
         int indexLoot;
-        if (lootsTypes.Length == 0)
-        {
-            indexLoot = 0;
-        }
-        else
-        {
-            indexLoot = Random.Range(0, lootsTypes.Length);
-        }
-
+        indexLoot = Random.Range(0, lootsTypes.Length);
         Instantiate(lootsTypes[indexLoot], InCollider(), Quaternion.identity);
+    }
+
+    //Shows an alert in the inspector if the LootsTypes array is empty
+    private bool ValidateLootTypes(GameObject[] _array)
+    {
+        return _array.Length > 0;
     }
 }
