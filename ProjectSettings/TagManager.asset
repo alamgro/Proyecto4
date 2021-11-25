@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Neutral
   - Ground
+  - Suelo
+  - Collectable
+  - Peligro
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Material
   - Enemy
   - Player
-  - 
+  - Ground
   - 
   - 
   - 
