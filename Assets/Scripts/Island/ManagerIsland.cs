@@ -31,7 +31,6 @@ public class ManagerIsland : MonoBehaviour
             SpawnIslands();
     }
 
-    [Button("Spawn Island")]
     public async void SpawnIslands()
     {
         float end = Time.time + spawnCooldown;
@@ -55,6 +54,7 @@ public class ManagerIsland : MonoBehaviour
         SpawnIslands();
     }
 
+    [Button("Spawn Island")]
     private void GenerateIsland()
     {
         if (currentActiveIslands >= islandPositions.Length)
