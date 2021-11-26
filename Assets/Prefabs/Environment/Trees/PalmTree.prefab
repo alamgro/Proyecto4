@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PalmTree
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 819c10f136958e549bf2eb4702b8f111, type: 3}
+      propertyPath: m_TagString
+      value: Peligro
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 819c10f136958e549bf2eb4702b8f111, type: 3}
       propertyPath: m_RootOrder
       value: 0

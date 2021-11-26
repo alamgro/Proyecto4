@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MangroveTree
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 66f0726e43c72a94aa9dc7aa4b6cbfe0, type: 3}
+      propertyPath: m_TagString
+      value: Peligro
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 66f0726e43c72a94aa9dc7aa4b6cbfe0, type: 3}
       propertyPath: m_RootOrder
       value: 0

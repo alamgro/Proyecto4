@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: d9a37c1e81c2edd418eab77179043eb0, type: 3}
       propertyPath: m_Name
-      value: Rock Type6 02
+      value: Rock Type6 02 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d9a37c1e81c2edd418eab77179043eb0, type: 3}
+      propertyPath: m_TagString
+      value: Peligro
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9a37c1e81c2edd418eab77179043eb0, type: 3}
       propertyPath: m_RootOrder

@@ -98,6 +98,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SadTree
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6b63ca9c7bc00f24b81b6cb48095b9a9, type: 3}
+      propertyPath: m_TagString
+      value: Peligro
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6b63ca9c7bc00f24b81b6cb48095b9a9, type: 3}
       propertyPath: m_RootOrder
       value: 0
