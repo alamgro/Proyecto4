@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3090034627055337763}
   - component: {fileID: 3090034627055337762}
   - component: {fileID: 3090034627055337760}
-  - component: {fileID: 3090034627055337765}
   - component: {fileID: 2361844643629691228}
+  - component: {fileID: 1932290917375901705}
   m_Layer: 6
   m_Name: PfbFood
   m_TagString: Collectable
@@ -94,25 +94,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 0.1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3090034627055337765
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3090034627055337767}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1425743, y: 0.9176253, z: 1.2439518}
-  m_Center: {x: 0.0047512054, y: 0.45939505, z: 0.001584053}
 --- !u!114 &2361844643629691228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +113,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeItem: 1
+--- !u!65 &1932290917375901705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090034627055337767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.95162964, y: 0.7087815, z: 0.9329281}
+  m_Center: {x: 0.023838043, y: 0.35788608, z: 0.0003194809}
