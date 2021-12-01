@@ -43,7 +43,6 @@ public class RespawnLoot : MonoBehaviour
         pos.y = colliderSpawn.transform.position.y + colliderSpawn.bounds.center.y;
         pos.z = Random.Range(colliderSpawn.bounds.min.z, colliderSpawn.bounds.max.z);
 
-        print(pos);
         return pos;
     }
 
